@@ -1,36 +1,3 @@
-The Auditor's AI: Privacy-Preserving Fraud Detection
-IBM Z Datathon 2026 - Theme 2: AI Secured (Innovation Without Exposure)
-Author: Syakir Kauthar Bin Sahril (Bachelor of Accounting Hons Student)
-
-Live Interactive Demo
-Try the live Streamlit web app here: https://ibm-z-datathon-auditor-ai-krbwkjlhcrjqywrqxpo498.streamlit.app/
-
-Project Overview
-Financial auditors cannot trust "black box" AI models, and banks cannot send sensitive data to public cloud AIs due to compliance laws (GDPR, SOX). This project solves that by deploying a Hybrid AI system entirely on an IBM LinuxONE mainframe.
-
-Architecture
-1. Predictive AI (TensorFlow LSTM): Analyzes 24 million transactions for anomalous patterns (99.86% accuracy).
-2. Risk Engine: Categorizes transactions into Low, Medium, High, and Critical risk.
-3. Generative AI (IBM Granite LLM Simulation): Generates human-readable, natural-language audit trails for flagged transactions.
-
-Tech Stack
-- Hardware: IBM LinuxONE (s390x architecture)
-- Environment: Docker, Jupyter Lab
-- Libraries: TensorFlow, Pandas, Matplotlib
-- Deployment: Model exported to .onnx format.
-
-Evidence
-- Auditor_AI_Project.ipynb: The main project notebook.
-- app.py: The Streamlit web app code.
-- fraud_lstm.onnx: The exported predictive model.
-
-You want the GitHub `README.md` to match the absolute fire of your pitch deck. Let's turn it from a simple text file into a professional, eye-catching project landing page. 
-
-GitHub uses Markdown, so we can add bold text, emojis, headers, and even a "badges" section at the top that makes it look like real enterprise software.
-
-Copy everything below and paste it directly into your `README.md` on GitHub. 
-
-***
 
 # 🛡️ The Auditor's AI: Privacy-Preserving Fraud Detection
 **IBM Z Datathon 2026 — Theme 2: AI Secured (Innovation Without Exposure)**
@@ -98,11 +65,4 @@ Experience the enterprise dashboard yourself. The Streamlit app includes a **Rea
 ---
 *Created for the IBM Z Datathon 2026. Built with passion for forensic accounting and secure AI.*
 
-***
 
-### 🚨 ACTION ITEMS FOR YOU:
-1. **Find and Replace:** In the text above, replace `YOUR_STREAMLIT_LINK_HERE` with your actual Streamlit URL (there are two places to do this).
-2. **Paste it into GitHub:** Click the pencil icon on your `README.md` file, delete the old text, paste this in, and click **Commit changes**.
-3. **Look at your repo:** GitHub will automatically render the badges and bold text. It's going to look like a professional open-source software project.
-
-**Once you commit this, go straight to H2S and hit submit. You are literally out of time!**
