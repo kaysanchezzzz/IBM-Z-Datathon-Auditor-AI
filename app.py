@@ -67,10 +67,9 @@ with col1:
 
 with col2:
     if run_single:
-                # 3. The Risk Bar Chart
-        import pandas as pd
-        chart_data = pd.DataFrame({"Risk": [score * 100, 100 - (score * 100)]}, index=["Fraud Probability", "Safe"])
-        st.bar_chart(chart_data, color=["#ff4b4b", "#09ab3b"])
+                    # 3. The Risk Visual
+     st.metric(label="AI Fraud Probability", value=f"{score*100:.1f}%")
+     st.progress(float(score)) # This creates a native Streamlit progress bar
 
 # --- ADVANCED FEATURE: BATCH PROCESSING ---
 st.divider()
