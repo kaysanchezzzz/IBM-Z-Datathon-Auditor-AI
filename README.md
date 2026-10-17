@@ -47,6 +47,21 @@ Experience the enterprise dashboard yourself. The Streamlit app includes a **Rea
 *   🧠 `fraud_lstm.onnx` - The trained LSTM model exported to the industry-standard ONNX format.
 *   📄 `requirements.txt` - Python dependencies for cloud deployment.
 
+
+---
+
+
+## 📊 Model Performance & Accuracy
+
+Our LSTM model achieved a **99.86% accuracy** rate on the test dataset. Because this is a fraud detection task, we prioritized **Recall (100%)** to ensure we caught every single fraudulent transaction, even if it meant flagging a few false positives.
+
+*(Note: The trained model is exported as `fraud_lstm.onnx` for production deployment. Due to its binary format, it cannot be opened directly in a browser, but the training logs and precision/recall metrics are shown below.)*
+
+<img width="1280" height="524" alt="image" src="https://github.com/user-attachments/assets/e8efd31f-4313-4ecd-84f9-4cb61df1ca06" />
+<img width="1280" height="553" alt="image" src="https://github.com/user-attachments/assets/681fe15c-f433-4246-89a0-01051a971949" />
+<img width="1280" height="367" alt="image" src="https://github.com/user-attachments/assets/76cb6e0c-109a-4503-8d62-8f5fd38c9330" />
+
+
 ---
 
 ### 🏆 Key Achievements
