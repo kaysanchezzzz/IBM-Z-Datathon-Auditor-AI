@@ -3,7 +3,7 @@ IBM Z Datathon 2026 - Theme 2: AI Secured (Innovation Without Exposure)
 Author: Syakir Kauthar Bin Sahril (Bachelor of Accounting Hons Student)
 
 Live Interactive Demo
-Try the live Streamlit web app here: https://ibm-z-datathon-auditor-ai-nwzue7nydzoym9cshvmre.streamlit.app
+Try the live Streamlit web app here: https://ibm-z-datathon-auditor-ai-krbwkjlhcrjqywrqxpo498.streamlit.app/
 
 Project Overview
 Financial auditors cannot trust "black box" AI models, and banks cannot send sensitive data to public cloud AIs due to compliance laws (GDPR, SOX). This project solves that by deploying a Hybrid AI system entirely on an IBM LinuxONE mainframe.
