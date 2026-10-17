@@ -67,24 +67,10 @@ with col1:
 
 with col2:
     if run_single:
-        # 3. The Speedometer Gauge Chart
-        fig = go.Figure(go.Indicator(
-            mode = "gauge+number",
-            value = score * 100,
-            domain = {'x': [0, 1], 'y': [0, 1]},
-            title = {'text': "Fraud Probability (%)"},
-            gauge = {
-                'axis': {'range': [None, 100]},
-                'bar': {'color': "darkred" if score > 0.5 else "darkgreen"},
-                'steps': [
-                    {'range': [0, 50], 'color': "lightgreen"},
-                    {'range': [50, 85], 'color': "gold"},
-                    {'range': [85, 100], 'color': "lightcoral"}
-                ],
-            }
-        ))
-        fig.update_layout(height=300, margin=dict(l=20, r=20, t=50, b=20))
-        st.plotly_chart(fig, use_container_width=True)
+                # 3. The Risk Bar Chart
+        import pandas as pd
+        chart_data = pd.DataFrame({"Risk": [score * 100, 100 - (score * 100)]}, index=["Fraud Probability", "Safe"])
+        st.bar_chart(chart_data, color=["#ff4b4b", "#09ab3b"])
 
 # --- ADVANCED FEATURE: BATCH PROCESSING ---
 st.divider()
