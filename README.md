@@ -33,7 +33,7 @@ Financial auditors cannot trust "black box" AI models, and banks cannot send sen
 ### 🚀 Live Interactive Demo
 Experience the enterprise dashboard yourself. The Streamlit app includes a **Real-Time Simulator** and a **Batch Processing Module** for CSV uploads.
 
-👉 **[Click here to launch the Live Web App]((https://ibm-z-datathon-auditor-ai-krbwkjlhcrjqywrqxpo498.streamlit.app/))**
+👉 **[Click here to launch the Live Web App](https://ibm-z-datathon-auditor-ai-krbwkjlhcrjqywrqxpo498.streamlit.app/)**
 
 *Demo Test Cases:*
 *   Try `$15.00` at `Starbucks` -> ✅ CLEARED
