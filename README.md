@@ -7,7 +7,7 @@
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.18-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)]()
 [![IBM LinuxONE](https://img.shields.io/badge/IBM_LinuxONE-s390x-052FAD?style=for-the-badge&logo=ibm&logoColor=white)]()
 
-> **Author:** Syakir Kauthar Bin Sahril (Bachelor of Accounting Hons. UNITEN KSHAS Student)  
+> **Author:** Syakir Kauthar Bin Sahril (Bachelor of Accounting Hons. UNITEN Student)  
 > **Objective:** To bridge the gap between forensic accounting and enterprise AI by providing transparent, explainable, and secure fraud detection.
 
 ---
