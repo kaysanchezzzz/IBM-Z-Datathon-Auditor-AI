@@ -2,7 +2,7 @@
 # 🛡️ The Auditor's AI: Privacy-Preserving Fraud Detection
 **IBM Z Datathon 2026 — Theme 2: AI Secured (Innovation Without Exposure)**
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](YOUR_STREAMLIT_LINK_HERE)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://ibm-z-datathon-auditor-ai-krbwkjlhcrjqywrqxpo498.streamlit.app/)
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)]()
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.18-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)]()
 [![IBM LinuxONE](https://img.shields.io/badge/IBM_LinuxONE-s390x-052FAD?style=for-the-badge&logo=ibm&logoColor=white)]()
@@ -33,7 +33,7 @@ Financial auditors cannot trust "black box" AI models, and banks cannot send sen
 ### 🚀 Live Interactive Demo
 Experience the enterprise dashboard yourself. The Streamlit app includes a **Real-Time Simulator** and a **Batch Processing Module** for CSV uploads.
 
-👉 **[Click here to launch the Live Web App](YOUR_STREAMLIT_LINK_HERE)**
+👉 **[Click here to launch the Live Web App]((https://ibm-z-datathon-auditor-ai-krbwkjlhcrjqywrqxpo498.streamlit.app/))**
 
 *Demo Test Cases:*
 *   Try `$15.00` at `Starbucks` -> ✅ CLEARED
