@@ -1,9 +1,3 @@
-Here is a highly professional, engaging, and technically accurate `README.md` for your GitHub repository. It tells a story, highlights your unique perspective as an accounting student, and proves your technical competence to the judges.
-
-Copy and paste this exactly into your `README.md` file:
-
-***
-
 The Auditor's AI: Privacy-Preserving Fraud Detection
 IBM Z Datathon 2026 — Theme 2: AI Secured (Innovation Without Exposure)
 Author: Syakir Kauthar (Accounting Student)
