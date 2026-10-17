@@ -1,60 +1,115 @@
 import streamlit as st
 import pandas as pd
+import plotly.graph_objects as go
 import time
 
-# Set page config
-st.set_page_config(page_title="The Auditor's AI", page_icon="🛡️", layout="wide")
+# --- PAGE CONFIG ---
+st.set_page_config(page_title="Auditor's AI | Enterprise", page_icon="🛡️", layout="wide")
 
-st.title("🛡️ The Auditor's AI Dashboard")
-st.subheader("Privacy-Preserving Fraud Detection on IBM LinuxONE")
-st.write("A Hybrid AI solution for forensic accounting. Adjust the inputs below to simulate real-time transaction auditing.")
+st.title("🛡️ The Auditor's AI: Enterprise Risk Engine")
+st.markdown("**Theme 2: AI Secured** | Running on IBM LinuxONE (Simulated Environment)")
+st.divider()
 
-# Layout with columns
-col1, col2 = st.columns([1, 2])
+# --- SIDEBAR: SINGLE TRANSACTION SIMULATOR ---
+st.sidebar.header("🎛️ Real-Time Simulator")
+amount = st.sidebar.number_input("Transaction Amount ($)", min_value=1.0, value=8900.00, step=100.0)
+merchant = st.sidebar.text_input("Merchant Name", value="Unknown Foreign Vendor")
+run_single = st.sidebar.button("🚀 Run Real-Time Audit", use_container_width=True)
 
-with col1:
-    st.markdown("### 🎛️ Transaction Simulator")
-    amount = st.number_input("Transaction Amount ($)", min_value=1.0, value=8900.00, step=100.0)
-    merchant = st.text_input("Merchant Name", value="Unknown Foreign Vendor")
-    fraud_score = st.slider("AI Fraud Probability Score", 0.0, 1.0, 0.95, step=0.01)
+# --- MAIN LAYOUT ---
+col1, col2 = st.columns([2, 1])
+
+# --- THE "AI" LOGIC ENGINE (Reusable function) ---
+def calculate_risk(amt, merch):
+    score = 0.05 # Base safe score
+    if amt > 5000: score += 0.50
+    elif amt > 1000: score += 0.20
     
-    run_btn = st.button("🚀 Run Real-Time Audit", use_container_width=True)
+    sketchy_words = ["unknown", "foreign", "crypto", "offshore", "wire", "casino"]
+    if any(word in merch.lower() for word in sketchy_words): score += 0.40
+    
+    score = min(score, 0.99) # Cap at 0.99
+    
+    if score >= 0.85: 
+        risk = "CRITICAL"
+        action = "Immediate account freeze"
+        reason = "High transaction amount combined with a high-risk merchant category."
+    elif score >= 0.50: 
+        risk = "HIGH"
+        action = "Flag for manual review"
+        reason = "Transaction deviates significantly from historical baseline."
+    elif score >= 0.20: 
+        risk = "MEDIUM"
+        action = "Monitor account"
+        reason = "Slight anomaly detected in transaction pattern."
+    else: 
+        risk = "LOW"
+        action = "Auto-approve"
+        reason = "Transaction matches normal behavioral profile."
+        
+    return score, risk, action, reason
+
+# --- DISPLAY SINGLE TRANSACTION RESULTS ---
+with col1:
+    if run_single:
+        with st.spinner("AI Processing on Mainframe..."):
+            time.sleep(1) # Dramatic pause
+            
+            score, risk, action, reason = calculate_risk(amount, merchant)
+            
+            # 1. The Alert Box
+            if score > 0.5:
+                st.error(f"🚨 **AUDIT FLAG:** Transaction of ${amount:,.2f} at '{merchant}'")
+            else:
+                st.success(f"✅ **CLEARED:** Transaction of ${amount:,.2f} at '{merchant}'")
+                
+            # 2. The LLM Explanation Box
+            st.info(f"🤖 **IBM Granite LLM Audit Trail:**\n*\"The predictive AI assigned a fraud probability of {score*100:.1f}%. This transaction has been categorized as {risk} RISK. Reason: {reason}. Automated Action: {action}.\"*")
 
 with col2:
-    st.markdown("### 📋 Audit Output")
-    if run_btn:
-        with st.spinner("AI Processing on Mainframe..."):
-            time.sleep(1) # Simulate processing time
-            
-            if fraud_score >= 0.85: risk, action = "CRITICAL RISK", "Immediate account freeze & forensic audit required."
-            elif fraud_score >= 0.50: risk, action = "HIGH RISK", "Flag for manual review by senior auditor."
-            elif fraud_score >= 0.20: risk, action = "MEDIUM RISK", "Monitor account for 24 hours."
-            else: risk, action = "LOW RISK", "Auto-approve. No action needed."
-            
-            if fraud_score > 0.5:
-                st.error(f"🚨 **AUDIT FLAG:** Transaction of ${amount:,.2f} at {merchant}")
-            else:
-                st.success(f"✅ **CLEARED:** Transaction of ${amount:,.2f} at {merchant}")
-                
-            # Dashboard Metrics
-            m1, m2, m3 = st.columns(3)
-            m1.metric(label="Risk Category", value=risk)
-            m2.metric(label="Fraud Probability", value=f"{fraud_score*100:.1f}%")
-            m3.metric(label="Action", value=action.split(' ')[0] + " " + action.split(' ')[1])
-            
-            # Generated Audit Note
-            st.markdown("#### 📝 Generated Audit Trail")
-            st.info(f"**System Log:** A transaction of ${amount:,.2f} at '{merchant}' was evaluated by the LSTM model. The predictive AI assigned a fraud probability of {fraud_score*100:.1f}%, placing it in the **{risk}** category. **Automated Action:** {action}")
+    if run_single:
+        # 3. The Speedometer Gauge Chart
+        fig = go.Figure(go.Indicator(
+            mode = "gauge+number",
+            value = score * 100,
+            domain = {'x': [0, 1], 'y': [0, 1]},
+            title = {'text': "Fraud Probability (%)"},
+            gauge = {
+                'axis': {'range': [None, 100]},
+                'bar': {'color': "darkred" if score > 0.5 else "darkgreen"},
+                'steps': [
+                    {'range': [0, 50], 'color': "lightgreen"},
+                    {'range': [50, 85], 'color': "gold"},
+                    {'range': [85, 100], 'color': "lightcoral"}
+                ],
+            }
+        ))
+        fig.update_layout(height=300, margin=dict(l=20, r=20, t=50, b=20))
+        st.plotly_chart(fig, use_container_width=True)
 
-# Add a fake historical log at the bottom to make it look like a real system
-if run_btn:
-    st.markdown("---")
-    st.markdown("### 🗄️ Recent Audit History")
-    history_data = pd.DataFrame({
-        "Transaction ID": ["TX-1092", "TX-1093", "TX-1094"],
-        "Merchant": ["Local Coffee", "Offshore Crypto", "Grocery Store"],
-        "Amount": [12.50, 2500.00, 85.00],
-        "Score": [0.02, 0.95, 0.10],
-        "Status": ["✅ CLEARED", "🚨 FLAGGED", "✅ CLEARED"]
-    })
-    st.dataframe(history_data, use_container_width=True)
+# --- ADVANCED FEATURE: BATCH PROCESSING ---
+st.divider()
+st.header("📁 Batch Processing Module")
+st.write("Upload a CSV file of daily transactions to run the AI engine on the entire batch at once.")
+
+uploaded_file = st.file_uploader("Upload Transactions CSV", type="csv")
+
+if uploaded_file is not None:
+    # Read the CSV
+    df = pd.read_csv(uploaded_file)
+    
+    # Process it
+    results = []
+    for index, row in df.iterrows():
+        # We assume the CSV has 'Amount' and 'Merchant' columns
+        amt = row['Amount']
+        merch = row['Merchant']
+        score, risk, action, reason = calculate_risk(amt, merch)
+        
+        status = "🚨 FLAGGED" if score > 0.5 else "✅ CLEARED"
+        results.append({"Amount": amt, "Merchant": merch, "Fraud Score": f"{score*100:.1f}%", "Status": status, "Action": action})
+        
+    result_df = pd.DataFrame(results)
+    
+    st.success(f"Successfully processed {len(result_df)} transactions!")
+    st.dataframe(result_df, use_container_width=True)
