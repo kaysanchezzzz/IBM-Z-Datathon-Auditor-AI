@@ -6,6 +6,7 @@
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)]()
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.18-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)]()
 [![IBM LinuxONE](https://img.shields.io/badge/IBM_LinuxONE-s390x-052FAD?style=for-the-badge&logo=ibm&logoColor=white)]()
+[![Video Pitch](https://img.shields.io/badge/▶_Watch_Video_Pitch-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/Mt8geS_b20Y)
 
 > **Author:** Syakir Kauthar Bin Sahril (Bachelor of Accounting Hons. UNITEN Student)  
 > **Objective:** To bridge the gap between forensic accounting and enterprise AI by providing transparent, explainable, and secure fraud detection.
@@ -27,6 +28,16 @@ Financial auditors cannot trust "black box" AI models, and banks cannot send sen
 | **Predictive AI** | TensorFlow LSTM | Analyzes sequences of 7 transactions to detect anomalies (99.86% accuracy). |
 | **Risk Engine** | Python Logic | Translates probability scores into actionable tiers (Low to Critical). |
 | **Generative AI** | IBM Granite LLM (Simulated) | Generates plain-language audit trails for every flagged transaction. |
+
+---
+
+## 🎥 Project Demo & Video Pitch
+
+Watch the 3-minute video pitch explaining the problem, the architecture, and a live demo of the application running.
+
+👉 **[Click here to watch the Video Pitch](https://youtu.be/YOUR_VIDEO_LINK_HERE)**
+
+*Video covers: Problem Statement → Architecture → Jupyter Notebook Evidence → Live Streamlit Demo.*
 
 ---
 
