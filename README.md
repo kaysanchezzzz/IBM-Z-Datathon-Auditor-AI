@@ -35,7 +35,7 @@ Financial auditors cannot trust "black box" AI models, and banks cannot send sen
 
 Watch the 3-minute video pitch explaining the problem, the architecture, and a live demo of the application running.
 
-👉 **[Click here to watch the Video Pitch](https://youtu.be/YOUR_VIDEO_LINK_HERE)**
+👉 **[Click here to watch the Video Pitch](https://youtu.be/Mt8geS_b20Y)**
 
 *Video covers: Problem Statement → Architecture → Jupyter Notebook Evidence → Live Streamlit Demo.*
 
